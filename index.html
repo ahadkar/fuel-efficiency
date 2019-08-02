@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<meta charset="utf-8">
+	<title>Fuel Efficiency</title>
+	<head>
+		<script src='https://d3js.org/d3.v5.min.js'></script>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:900" rel="stylesheet">
+		<style>
+
+			.main-container {
+				display: grid;
+				grid-template-columns: auto;
+				grid-template-rows: 175px auto 30px auto auto;
+				justify-items: stretch;
+			}
+
+			.title-container {
+				display: grid;
+				grid-template-columns: auto 860px auto;
+			}
+
+			.title-item-container {
+				display: grid;
+				grid-template-rows: 60px 60px;
+			}
+
+			.segmented-control-container {
+				display: grid;
+				grid-template-columns: 260px 325px;
+			}
+
+			.grid-container-top {
+				display: grid;
+				grid-template-columns: auto 860px auto;
+				background-color: white;
+				padding-top: 15px;
+				width: 100%;
+				border-radius: 3px;
+			}
+
+			.grid-container-bottom {
+				display: grid;
+				grid-template-columns: auto 400px 60px 400px auto;
+				background-color: white;
+				padding-top: 15px;
+				width: 100%;
+				border-radius: 3px;
+			}
+
+			.svg-container-top {
+				display: block;
+				margin: auto;
+				align-content: center;
+			}
+
+			.svg-container-bottom-left {
+				display: block;
+				margin: auto;
+				align-content: right;
+			}
+
+			.svg-container-bottom-right {
+				display: block;
+				margin: auto;
+				align-content: left;
+			}
+
+			.title {
+				padding-top: 20px;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 700;
+				font-size: 30px;
+			}
+
+			.sub-title {
+				padding-top: 20px;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 400;
+				font-size: 20px;
+			}
+
+			.segmented-control-item {
+				display: grid;
+				grid-template-rows: : auto auto;
+			}
+
+			.svg-style-main {
+				background-color: #f6f6f6;
+				border-width: 1px;
+				border-radius: 3px;
+				border: lightgray;
+				width: 860px;
+				height: 400px;
+			}
+
+			.svg-style-sub-left {
+				background-color: #f6f6f6;
+				border-width: 1px;
+				border-radius: 3px;
+				border: lightgray;
+				width: 400px;
+				height: 300px;
+			}
+
+			.svg-style-sub-right {
+				background-color: #f6f6f6;
+				border-width: 1px;
+				border-radius: 3px;
+				border: lightgray;
+				width: 400px;
+				height: 300px;
+			}
+
+			.buttonGroup {
+				display: -webkit-box;
+				-webkit-box-orient: horizontal;
+				margin-left: -40px;
+				-webkit-box-pack:left;
+				-webkit-box-sizing: border-box;
+			}
+
+			.buttonGroup > li {
+				display: grid;
+				border: solid 1px #9a9a99;
+				border-left: none;
+				-webkit-border-radius: 0px;
+				text-align: center;
+				color: #6b6b6b;
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 300;
+				font-size: 15px;
+			}
+
+			.buttonGroup > li:first-child {
+				border-left: solid 1px #9a9a99;
+				-webkit-border-top-left-radius: 5px;
+				-webkit-border-bottom-left-radius: 5px;
+			}
+
+			.buttonGroup > li:last-child {
+				-webkit-border-top-right-radius: 5px;
+				-webkit-border-bottom-right-radius: 5px;
+			}
+
+			.buttonGroup > li.selected {
+				background-color: gray;
+				color: #fff;
+				border-color: #193a7f;
+				font-weight: 400;
+			}
+
+		</style>
+	</head>
+	<body onload='plotGraphs()' style="background-color: white">		
+		
+		<div class="main-container">
+			
+			<div class="title-container">
+				<div></div>
+				<div class="title-item-container">
+					<div class="title">
+						Fuel Efficiency
+					</div>
+					<div class="segmented-control-container">
+						<div class="segmented-control-item">
+							<div class="sub-title">
+								Engine Type
+							</div>
+							<div>
+								<ul class="buttonGroup" id="engine-type">
+									<li class="selected" id="et">Gasoline</li>
+									<li id="et">Diesel</li>
+									<li id="et">Electric</li>
+								</ul>
+							</div>
+						</div>
+						<div class="segmented-control-item">
+							<div class="sub-title">
+								Cylinders
+							</div>
+							<div>
+								<ul class="buttonGroup" id="cylinder-type">
+									<li>0</li>
+									<li>3</li>
+									<li class="selected">4</li>
+									<li>6</li>
+									<li>8</li>
+									<li>10</li>
+									<li>12</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div></div>
+			</div>
+
+			<div class="grid-container-top">
+				<div></div>
+				<div class="svg-container-top">
+					<svg class="svg-style-main" id="bar-chart"></svg>
+				</div>
+				<div></div>
+			</div>
+
+			<div></div>
+
+			<div class="grid-container-bottom">
+				<div></div>
+				<div class="svg-container-bottom-left">
+					<svg class="svg-style-sub-left" id="bubble-chart"></svg>
+				</div>
+				<div></div>
+				<div>
+					<svg class="svg-style-sub-right" id="scatter-plot"></svg>
+				</div>
+				<div></div>
+			</div>
+
+		</div>
+
+		<script>
+
+			var ul = document.getElementsByTagName("UL");
+
+			var selected_engine_type = "Gasoline";
+			var selected_cylinder_type = "4";
+
+			for(var i = 0, j = ul.length; i < j; i++) {
+				if (/\bbuttonGroup\b/.test(ul[i].className)) {
+					ul[i].onclick = onClickSegementedControl(ul[i]);
+				}
+			}
+
+			var engine = document.getElementById("engine-type");
+			engine.addEventListener("click", plotGraphs, false);
+
+			var cylinder = document.getElementById("cylinder-type");
+			cylinder.addEventListener("click", plotGraphs, false);
+
+			async function plotGraphs() {
+
+				const data = await d3.csv("https://flunky.github.io/cars2017.csv");
+
+				console.log(selected_engine_type);
+				console.log(selected_cylinder_type);
+
+				var margin = 100;
+				var width = 830;
+				var height = 400;
+				var padding = 1.5; // separation between same-color nodes
+				var clusterPadding = 6; // separation between different-color nodes
+				var maxRadius = 12;
+
+				var car_make = [];
+
+				var colors = ["F3577E", "295E62", "EFCD91", "B13333", "C4C685", "6DB3B9", "D44942", "FB921F", "3A4710", "392924", 
+							  "EF3A99", "3D2171", "F0CB0D", "30426B", "92C0D2", "0C8B4F", "293952", "328777", "5CBBF1", "8EC557",
+							  "2F5D51", "DAB19A", "205771", "63BD9E", "687761", "2C313C", "69B3A8", "EC7828", "35C68D", "0C3D4C",
+							  "58DEC1", "C5AE52", "D87B64", "D9BB75", "3F222C", "9C584A", "9C342C", "779B8A", "326012", "C68D26",
+							  "FA224B", "2B6985", "7E906C", "856257"];
+
+				// console.log(data)
+
+				var selected_data = [];
+
+				data.forEach(function(d) {
+					if (!car_make.includes(d.Make)) {
+						car_make.push(d.Make);
+					}
+
+					if (d.Fuel == selected_engine_type && d.EngineCylinders == selected_cylinder_type) {
+						console.log(d.AverageHighwayMPG)
+						if (selected_data.hasOwnProperty(d.Make)) {
+							var value = selected_data.data[d.Make];
+							value += d.AverageHighwayMPG;
+							selected_data[d.Make] = parseFloat((value / 2));
+						} else {
+
+							// selected_data[d.Make] = parseFloat(d.AverageHighwayMPG);
+						}
+					}
+				});
+
+				console.log(selected_data)
+
+				// var svg = d3.select("#bar-chart");
+				// 			.append("g")
+  		// 					.attr("transform", "translate("+margin+","+margin+")")
+  		// 					.selectAll("rect")
+  		// 					.data(selected_data)
+  		// 					.enter()
+  		// 					.append("rect")
+  		// 					.attr("x", function(d, i) {
+
+  		// 					})
+  		// 					.attr("y", function(d, i){
+
+  		// 					})
+
+
+
+				// console.log(svg);
+				// console.log(car_make.length)
+				// console.log(car_make)
+			}
+
+			function onClickSegementedControl(target) {
+				function event(event) {
+					var li = target.getElementsByTagName("LI");
+					
+					for (var i = 0, j = li.length; i < j; i++) {
+						var _ = li[i];
+						_.className = _.className.replace(/\bselected\b/, "")
+						if (_ === event.target) 
+							_.className += "selected";
+					}
+
+					for (var m = 0; m < li.length; m++) {
+						var _ = li[m];
+						if (_.className == "selected") {
+							if (target.id == "engine-type") {
+								selected_engine_type = _.innerHTML;
+								break;
+							} else if (target.id == "cylinder-type") {
+								selected_cylinder_type = _.innerHTML;
+								break;
+							}
+						}
+					}
+				}
+
+				return event;
+			}
+
+		</script>
+	</body>
+</html>
