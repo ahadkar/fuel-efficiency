@@ -1,6 +1,6 @@
 ﻿Make,MakeOrigin,Fuel,HexColor,EngineCylinders,AverageHighwayMPG,AverageCityMPG
-Acura,Asia,Gasoline,#19805A,4,35,25
-Acura,Asia,Gasoline,#19805A,6,28,21
+Acura,Asia,Gasoline,#337430,4,35,25
+Acura,Asia,Gasoline,#337430,6,28,21
 Alfa Romeo,Europe,Gasoline,#EBB421,4,33,24
 Alfa Romeo,Europe,Gasoline,#EBB421,6,24,17
 Aston Martin,Europe,Gasoline,#EBB421,12,19,12
@@ -57,23 +57,23 @@ Ford,North America,Gasoline,#CC4110,3,40,29
 Ford,North America,Gasoline,#CC4110,4,31,24
 Ford,North America,Gasoline,#CC4110,6,23,17
 Ford,North America,Gasoline,#CC4110,8,22,15
-Genesis,Asia,Gasoline,#19805A,6,24,17
-Genesis,Asia,Gasoline,#19805A,8,23,15
-Genesis,Asia,Gasoline,#19805A,6,27,17
+Genesis,Asia,Gasoline,#337430,6,24,17
+Genesis,Asia,Gasoline,#337430,8,23,15
+Genesis,Asia,Gasoline,#337430,6,27,17
 GMC,North America,Diesel,#CC4110,4,29,21
 GMC,North America,Gasoline,#CC4110,4,27,20
 GMC,North America,Gasoline,#CC4110,6,23,17
 GMC,North America,Gasoline,#CC4110,8,21,15
-Honda,Asia,Gasoline,#19805A,4,38,30
-Honda,Asia,Gasoline,#19805A,4,37,29
-Honda,Asia,Gasoline,#19805A,6,28,19
-Hyundai,Asia,Electricity,#19805A,0,122,150
-Hyundai,Asia,Gasoline,#19805A,4,34,27
-Hyundai,Asia,Gasoline,#19805A,6,25,18
-Infiniti,Asia,Gasoline,#19805A,4,30,22
-Infiniti,Asia,Gasoline,#19805A,6,27,20
-Infiniti,Asia,Gasoline,#19805A,8,22,15
-Infiniti,Asia,Gasoline,#19805A,4,27,25
+Honda,Asia,Gasoline,#337430,4,38,30
+Honda,Asia,Gasoline,#337430,4,37,29
+Honda,Asia,Gasoline,#337430,6,28,19
+Hyundai,Asia,Electricity,#337430,0,122,150
+Hyundai,Asia,Gasoline,#337430,4,34,27
+Hyundai,Asia,Gasoline,#337430,6,25,18
+Infiniti,Asia,Gasoline,#337430,4,30,22
+Infiniti,Asia,Gasoline,#337430,6,27,20
+Infiniti,Asia,Gasoline,#337430,8,22,15
+Infiniti,Asia,Gasoline,#337430,4,27,25
 Jaguar,Europe,Diesel,#EBB421,4,39,30
 Jaguar,Europe,Gasoline,#EBB421,4,30,21
 Jaguar,Europe,Gasoline,#EBB421,6,26,18
@@ -84,28 +84,28 @@ Jeep,North America,Gasoline,#CC4110,4,31,24
 Jeep,North America,Gasoline,#CC4110,8,19,13
 Jeep,North America,Gasoline,#CC4110,4,27,21
 Jeep,North America,Gasoline,#CC4110,6,22,17
-Kia,Asia,Electricity,#19805A,0,92,120
-Kia,Asia,Gasoline,#19805A,8,23,15
-Kia,Asia,Gasoline,#19805A,4,33,27
-Kia,Asia,Gasoline,#19805A,6,25,18
+Kia,Asia,Electricity,#337430,0,92,120
+Kia,Asia,Gasoline,#337430,8,23,15
+Kia,Asia,Gasoline,#337430,4,33,27
+Kia,Asia,Gasoline,#337430,6,25,18
 Lamborghini,Europe,Gasoline,#EBB421,10,21,14
 Lamborghini,Europe,Gasoline,#EBB421,12,17,10
 Land Rover,Europe,Diesel,#EBB421,6,28,22
 Land Rover,Europe,Gasoline,#EBB421,4,27,20
 Land Rover,Europe,Gasoline,#EBB421,6,23,17
 Land Rover,Europe,Gasoline,#EBB421,8,19,14
-Lexus,Asia,Gasoline,#19805A,4,30,22
-Lexus,Asia,Gasoline,#19805A,6,28,21
-Lexus,Asia,Gasoline,#19805A,8,22,16
-Lexus,Asia,Gasoline,#19805A,4,36,39
-Lexus,Asia,Gasoline,#19805A,6,28,20
+Lexus,Asia,Gasoline,#337430,4,30,22
+Lexus,Asia,Gasoline,#337430,6,28,21
+Lexus,Asia,Gasoline,#337430,8,22,16
+Lexus,Asia,Gasoline,#337430,4,36,39
+Lexus,Asia,Gasoline,#337430,6,28,20
 Lincoln,North America,Gasoline,#CC4110,4,29,23
 Lincoln,North America,Gasoline,#CC4110,6,24,16
 Lotus,Europe,Gasoline,#EBB421,6,24,17
 Maserati,Europe,Gasoline,#EBB421,6,24,16
 Maserati,Europe,Gasoline,#EBB421,8,20,14
-Mazda,Asia,Gasoline,#19805A,4,34,26
-Mazda,Asia,Gasoline,#19805A,4,35,27
+Mazda,Asia,Gasoline,#337430,4,34,26
+Mazda,Asia,Gasoline,#337430,4,35,27
 McLaren Automotive,Europe,Gasoline,#EBB421,8,23,16
 Mercedes-Benz,Europe,Electricity,#EBB421,0,82,85
 Mercedes-Benz,Europe,Gasoline,#EBB421,4,30,23
@@ -113,16 +113,16 @@ Mercedes-Benz,Europe,Gasoline,#EBB421,6,25,19
 Mercedes-Benz,Europe,Gasoline,#EBB421,8,22,16
 Mercedes-Benz,Europe,Gasoline,#EBB421,12,20,13
 MINI,Europe,Gasoline,#EBB421,4,33,24
-Mitsubishi,Asia,Electricity,#19805A,0,102,121
-Mitsubishi,Asia,Gasoline,#19805A,6,27,20
-Mitsubishi,Asia,Gasoline,#19805A,3,42,35
-Mitsubishi,Asia,Gasoline,#19805A,4,31,24
-Nissan,Asia,Electricity,#19805A,0,101,124
-Nissan,Asia,Gasoline,#19805A,4,31,26
-Nissan,Asia,Gasoline,#19805A,6,26,18
-Nissan,Asia,Gasoline,#19805A,4,33,26
-Nissan,Asia,Gasoline,#19805A,6,25,18
-Nissan,Asia,Gasoline,#19805A,8,20,14
+Mitsubishi,Asia,Electricity,#337430,0,102,121
+Mitsubishi,Asia,Gasoline,#337430,6,27,20
+Mitsubishi,Asia,Gasoline,#337430,3,42,35
+Mitsubishi,Asia,Gasoline,#337430,4,31,24
+Nissan,Asia,Electricity,#337430,0,101,124
+Nissan,Asia,Gasoline,#337430,4,31,26
+Nissan,Asia,Gasoline,#337430,6,26,18
+Nissan,Asia,Gasoline,#337430,4,33,26
+Nissan,Asia,Gasoline,#337430,6,25,18
+Nissan,Asia,Gasoline,#337430,8,20,14
 Porsche,Europe,Gasoline,#EBB421,4,27,21
 Porsche,Europe,Gasoline,#EBB421,6,26,19
 Porsche,Europe,Gasoline,#EBB421,8,21,14
@@ -132,14 +132,14 @@ Ram,North America,Gasoline,#CC4110,6,24,17
 Rolls-Royce,Europe,Gasoline,#EBB421,12,19,12
 Roush Performance,North America,Gasoline,#CC4110,8,23,14
 Smart,Europe,Gasoline,#EBB421,3,39,32
-Subaru,Asia,Gasoline,#19805A,4,27,21
-Subaru,Asia,Gasoline,#19805A,4,33,25
-Subaru,Asia,Gasoline,#19805A,6,28,20
+Subaru,Asia,Gasoline,#337430,4,27,21
+Subaru,Asia,Gasoline,#337430,4,33,25
+Subaru,Asia,Gasoline,#337430,6,28,20
 Tesla,North America,Electricity,#CC4110,0,98,92
-Toyota,Asia,Gasoline,#19805A,4,30,23
-Toyota,Asia,Gasoline,#19805A,4,35,32
-Toyota,Asia,Gasoline,#19805A,6,25,20
-Toyota,Asia,Gasoline,#19805A,8,18,13
+Toyota,Asia,Gasoline,#337430,4,30,23
+Toyota,Asia,Gasoline,#337430,4,35,32
+Toyota,Asia,Gasoline,#337430,6,25,20
+Toyota,Asia,Gasoline,#337430,8,18,13
 Volkswagen,Europe,Gasoline,#EBB421,4,28,21
 Volkswagen,Europe,Gasoline,#EBB421,4,33,24
 Volkswagen,Europe,Gasoline,#EBB421,6,25,18
