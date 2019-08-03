@@ -1,0 +1,11 @@
+D3 Gallery
+https://github.com/d3/d3/wiki/Gallery
+
+
+Bar Chart
+http://duspviz.mit.edu/d3-workshop/transitions-animation/
+https://blockbuilder.org/1Cr18Ni9/bfadecc96183c48d13b7b90bcf358a61
+https://codepen.io/jackdbd/pen/NAEdBG
+
+Bubble Chart
+http://bl.ocks.org/Caged/6476579
