@@ -5,6 +5,7 @@
 	<title>Fuel Efficiency</title>
 	<head>
 		<script src='https://d3js.org/d3.v5.min.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
@@ -22,7 +23,7 @@
 
 			.title-container {
 				display: grid;
-				grid-template-columns: auto 860px auto;
+				grid-template-columns: auto 1060px auto;
 			}
 
 			.title-item-container {
@@ -32,12 +33,12 @@
 
 			.segmented-control-container {
 				display: grid;
-				grid-template-columns: 260px 325px;
+				grid-template-columns: 275px 325px;
 			}
 
 			.grid-container-top {
 				display: grid;
-				grid-template-columns: auto 860px auto;
+				grid-template-columns: auto 1060px auto;
 				background-color: white;
 				padding-top: 15px;
 				width: 100%;
@@ -46,7 +47,7 @@
 
 			.grid-container-bottom {
 				display: grid;
-				grid-template-columns: auto 400px 60px 400px auto;
+				grid-template-columns: auto 500px 60px 500px auto;
 				background-color: white;
 				padding-top: 15px;
 				width: 100%;
@@ -95,8 +96,8 @@
 				border-width: 1px;
 				border-radius: 3px;
 				border: lightgray;
-				width: 860px;
-				height: 400px;
+				width: 1060px;
+				height: 600px;
 			}
 
 			.svg-style-sub-left {
@@ -104,7 +105,7 @@
 				border-width: 1px;
 				border-radius: 3px;
 				border: lightgray;
-				width: 400px;
+				width: 500px;
 				height: 300px;
 			}
 
@@ -113,7 +114,7 @@
 				border-width: 1px;
 				border-radius: 3px;
 				border: lightgray;
-				width: 400px;
+				width: 500px;
 				height: 300px;
 			}
 
@@ -159,6 +160,51 @@
 				font-weight: 400;
 			}
 
+			.tooltip {
+				background: #b0c4de;
+			  	border: 0;
+			  	border-radius: 8px;
+			  	font-family: 'Roboto', sans-serif;
+				font-weight: 400;
+				font-size: 12px;
+			  	height: 20px;
+			  	padding: 2px;
+			  	pointer-events: none;
+			  	position: absolute;
+			  	text-align: center;
+			  	width: 120px;
+			}
+
+			.bar {
+				fill: #4682b4;
+			}
+
+			.bar:hover {
+				fill: #17bf3c;
+			}
+  
+
+			.axis {
+  				font-family: 'Roboto', sans-serif;
+				font-weight: 700;
+				font-size: 10px;
+			}
+
+			.axis path,
+			.axis line {
+				fill: none;
+  				shape-rendering: crispEdges;
+  				stroke:  #000;
+			}
+
+			.x.axis path {
+				display: none;
+			}
+
+			.y.axis text {
+				fill: #000;
+			}
+
 		</style>
 	</head>
 	<body onload='plotGraphs()' style="background-color: white">		
@@ -180,7 +226,7 @@
 								<ul class="buttonGroup" id="engine-type">
 									<li class="selected" id="et">Gasoline</li>
 									<li id="et">Diesel</li>
-									<li id="et">Electric</li>
+									<li id="et">Electricity</li>
 								</ul>
 							</div>
 						</div>
@@ -235,6 +281,7 @@
 
 			var selected_engine_type = "Gasoline";
 			var selected_cylinder_type = "4";
+			var selected_env = "Highway";
 
 			for(var i = 0, j = ul.length; i < j; i++) {
 				if (/\bbuttonGroup\b/.test(ul[i].className)) {
@@ -250,19 +297,17 @@
 
 			async function plotGraphs() {
 
-				const data = await d3.csv("https://flunky.github.io/cars2017.csv");
+				const data = await d3.csv("https://raw.githubusercontent.com/ahadkar/fuel-efficiency/master/data/cars2017.csv");
 
 				console.log(selected_engine_type);
 				console.log(selected_cylinder_type);
 
 				var margin = 100;
-				var width = 830;
-				var height = 400;
-				var padding = 1.5; // separation between same-color nodes
+				var width = 1060;
+				var height = 600;
+				var padding = 5; // separation between same-color nodes
 				var clusterPadding = 6; // separation between different-color nodes
 				var maxRadius = 12;
-
-				var car_make = [];
 
 				var colors = ["F3577E", "295E62", "EFCD91", "B13333", "C4C685", "6DB3B9", "D44942", "FB921F", "3A4710", "392924", 
 							  "EF3A99", "3D2171", "F0CB0D", "30426B", "92C0D2", "0C8B4F", "293952", "328777", "5CBBF1", "8EC557",
@@ -280,39 +325,127 @@
 					}
 
 					if (d.Fuel == selected_engine_type && d.EngineCylinders == selected_cylinder_type) {
-						console.log(d.AverageHighwayMPG)
-						if (selected_data.hasOwnProperty(d.Make)) {
-							var value = selected_data.data[d.Make];
-							value += d.AverageHighwayMPG;
-							selected_data[d.Make] = parseFloat((value / 2));
+						var found = false;
+						var index = 0;
+						for (var i = 0; i < selected_data.length; i++) {
+							value = selected_data[i]
+							if (value.make == d.Make) {
+								index = i;
+								found = true;
+								break;
+							}
+						}
+						if (found) {
+							var value = selected_data[index];
+							value.avg += parseFloat(d.AverageHighwayMPG);
+							value.avg = (value.avg / 2);
+							selected_data[index] = value;
 						} else {
 
-							// selected_data[d.Make] = parseFloat(d.AverageHighwayMPG);
+							let car_make = {
+								make : d.Make,
+								avg : parseFloat(d.AverageHighwayMPG),
+							}
+							selected_data.push(car_make);
 						}
 					}
 				});
 
-				console.log(selected_data)
+				var averages = [];
+				var makes = [];
 
-				// var svg = d3.select("#bar-chart");
-				// 			.append("g")
-  		// 					.attr("transform", "translate("+margin+","+margin+")")
-  		// 					.selectAll("rect")
-  		// 					.data(selected_data)
-  		// 					.enter()
-  		// 					.append("rect")
-  		// 					.attr("x", function(d, i) {
+				selected_data.forEach(function(d) {
+					averages.push(d.avg);
+					makes.push(d.make);
+				});
 
-  		// 					})
-  		// 					.attr("y", function(d, i){
+				var maxAverage = d3.max(averages, function(d) { return d; });
 
-  		// 					})
+				plotBarChart(selected_data, maxAverage);
+
+				function plotBarChart(selected_data, maxAverage) {
+
+					// define scales and axises
+				    var xScale = d3.scaleBand()
+				        .domain(data.map(function(d){ return d.make; }))
+				        .range([0, width - (margin * 2)])
+				        .paddingInner(0.1);
+
+				    var yScale = d3.scaleLinear()
+				        .domain([0, maxAverage])
+				        .range([height - (margin * 2), 0]);
+
+				    const xAxis = d3.axisBottom()
+	  								.scale(xScale);
+
+					const yAxis = d3.axisLeft()
+				  					.scale(yScale)
+					  				.ticks(10, 'mpg')
+					  				.tickFormat(d3.format("~s"));
+
+					d3.select("#bar-chart").selectAll("*").remove();
+				    
+				    const svg = d3.select('#bar-chart')
+								  .append('g')
+								  .attr('transform', `translate(${margin}, ${margin})`);
+
+					const tooltip = d3.select('body').append('div')
+									  .attr('class', 'tooltip')
+									  .style('opacity', 0);
+
+					xScale.domain(selected_data.map(d => d.make));
+					
+					yScale.domain([0, d3.max(selected_data, d => d.avg) + 10]);
+
+					svg.append('g')
+					   .attr('class', 'x axis')
+					   .attr('transform', `translate(0, ${height - (margin * 2)})`)
+					   .call(xAxis)
+					   .selectAll("Text")
+					   .attr("dx", "-40px")
+			           .attr("dy", "-8px")
+			           .attr("transform", "rotate(-90)");
+
+					svg.append('g')
+					   .attr('class', 'y axis')
+					   .call(yAxis)
+					   .append('text')
+					   .attr('y', 0)
+					   .style('text-anchor', 'end')
+					   .text('Avg MPG')
+					   .style("text-anchor", "end");
+
+
+					svg.selectAll('.bar')
+					   .data(selected_data)
+					   .enter()
+					   .append('rect')
+					   .attr('class', 'bar')
+					   .attr('x', function(d) { return xScale(d.make); })
+					   .attr('width', xScale.bandwidth())
+					   .attr('y', height - (margin * 2))
+					   .attr('height', 0)
+					   .on('mouseover', function(d) {
+					    	tooltip.transition().duration(200).style('opacity', 0.9);
+					    	tooltip.html(`Average: <span>${d.avg}</span>`)
+					    		   .style('left', `${d3.event.layerX}px`)
+					      		   .style('top', `${(d3.event.layerY - 28)}px`);
+					  })
+					   .on('mouseout', function(d) { return tooltip.transition().duration(500).style('opacity', 0); })
+					   .transition()
+					   .duration(500)
+					   .ease(d3.easeLinear)
+					   .attr('y', function(d) { return yScale(d.avg); })
+					   .attr('height', function(d) { return height - (margin * 2) - yScale(d.avg); });
+
+				}
+
+				function plotBubbleGraph(selected_data) {
 
 
 
-				// console.log(svg);
-				// console.log(car_make.length)
-				// console.log(car_make)
+				}
+
 			}
 
 			function onClickSegementedControl(target) {
