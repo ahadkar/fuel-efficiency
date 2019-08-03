@@ -17,23 +17,35 @@
 			.main-container {
 				display: grid;
 				grid-template-columns: auto;
-				grid-template-rows: 175px auto 30px auto auto;
+				grid-template-rows: 285px auto 30px auto auto;
 				justify-items: stretch;
 			}
 
 			.title-container {
 				display: grid;
 				grid-template-columns: auto 1060px auto;
+			  	background-color: white;
 			}
 
 			.title-item-container {
 				display: grid;
-				grid-template-rows: 60px 60px;
+				grid-template-rows: 60px 30px 100px 30px;
+			}
+
+			.legend-container {
+				display: grid;
+				grid-template-columns: 600px 125px 335px;
+				margin-bottom: 20px;
 			}
 
 			.segmented-control-container {
 				display: grid;
-				grid-template-columns: 275px 325px;
+				grid-template-columns: 290px 340px 300px 245px;
+				position: -webkit-sticky; /* Safari */
+			  	position: sticky;
+			  	top: 0;
+			  	background-color: white;
+			  	margin-bottom: -10px
 			}
 
 			.grid-container-top {
@@ -77,6 +89,7 @@
 				font-family: 'Roboto', sans-serif;
 				font-weight: 700;
 				font-size: 30px;
+				color: #26547C;
 			}
 
 			.sub-title {
@@ -84,6 +97,7 @@
 				font-family: 'Roboto', sans-serif;
 				font-weight: 400;
 				font-size: 20px;
+				color: #26547C;
 			}
 
 			.segmented-control-item {
@@ -92,7 +106,7 @@
 			}
 
 			.svg-style-main {
-				background-color: #f6f6f6;
+				background-color: #F8F8F8;
 				border-width: 1px;
 				border-radius: 3px;
 				border: lightgray;
@@ -101,21 +115,21 @@
 			}
 
 			.svg-style-sub-left {
-				background-color: #f6f6f6;
+				background-color: #F8F8F8;
 				border-width: 1px;
 				border-radius: 3px;
 				border: lightgray;
 				width: 500px;
-				height: 300px;
+				height: 500px;
 			}
 
 			.svg-style-sub-right {
-				background-color: #f6f6f6;
+				background-color: #F8F8F8;
 				border-width: 1px;
 				border-radius: 3px;
 				border: lightgray;
 				width: 500px;
-				height: 300px;
+				height: 500px;
 			}
 
 			.buttonGroup {
@@ -128,24 +142,25 @@
 
 			.buttonGroup > li {
 				display: grid;
-				border: solid 1px #9a9a99;
+				border: solid 1px #26547C;
 				border-left: none;
 				-webkit-border-radius: 0px;
 				text-align: center;
-				color: #6b6b6b;
+				color: #26547C;
 				padding-left: 15px;
 				padding-right: 15px;
 				padding-top: 10px;
 				padding-bottom: 10px;
 				font-family: 'Roboto', sans-serif;
-				font-weight: 300;
-				font-size: 15px;
+				font-weight: 400;
+				font-size: 12px;
 			}
 
 			.buttonGroup > li:first-child {
-				border-left: solid 1px #9a9a99;
+				border-left: solid 1px #26547C;
 				-webkit-border-top-left-radius: 5px;
 				-webkit-border-bottom-left-radius: 5px;
+				color: #26547C;
 			}
 
 			.buttonGroup > li:last-child {
@@ -154,25 +169,45 @@
 			}
 
 			.buttonGroup > li.selected {
-				background-color: gray;
+				background-color: #26547C;
 				color: #fff;
-				border-color: #193a7f;
-				font-weight: 400;
+				border-color: #26547C;
+				font-weight: 500;
 			}
 
 			.tooltip {
-				background: #b0c4de;
+				background: #26547C;
 			  	border: 0;
-			  	border-radius: 8px;
+			  	border-radius: 3px;
 			  	font-family: 'Roboto', sans-serif;
 				font-weight: 400;
-				font-size: 12px;
-			  	height: 20px;
-			  	padding: 2px;
+				font-size: 15px;
+			  	height: 40px;
+			  	padding: 12px;
 			  	pointer-events: none;
 			  	position: absolute;
 			  	text-align: center;
-			  	width: 120px;
+			  	width: 125px;
+			  	color: #ffffff;
+			}
+
+			.tooltip:after {
+			  box-sizing: border-box;
+			  display: inline;
+			  font-size: 15px;
+			  width: 10%;
+			  line-height: 9;
+			  color: #26547C;
+			  /*content: "\25BC";*/
+			  position: absolute;
+			  text-align: center;
+			}
+
+			/* Style northward tooltips differently */
+			.tooltip.n:after {
+			  margin: -1px 0 0 0;
+			  top: 100%;
+			  left: 0;
 			}
 
 			.bar {
@@ -187,7 +222,7 @@
 			.axis {
   				font-family: 'Roboto', sans-serif;
 				font-weight: 400;
-				font-size: 10px;
+				font-size: 12px;
 				color: #636c77;
 			}
 
@@ -199,12 +234,66 @@
 			}
 
 			.x.axis path {
-				display: none;
+				/*display: none;*/
 			}
 
 			.y.axis text {
 				fill: #636c77;
 			}
+
+			hr {
+                width: 1060px;
+                height: 1px;
+                background-color:#e5e6eb;
+                border: 0 none;
+                margin: auto 100px 10px 0px;
+            }
+
+            .legend {
+            	display: grid;
+            	grid-template-columns: 90px 110px 150px;
+            	grid-template-rows: 80px;
+            	height: 80px;
+            	align-items: right;
+            }
+
+            .legend-item {
+            	display: grid;
+            	grid-template-columns: 20px auto;
+            }
+
+            .legend-square-1 {
+            	background-color: #EF476F;
+            	width: 25px;
+            	height: 25px;
+            	margin-top: 20px;
+            	border-radius: 3px;
+            }
+
+            .legend-square-2 {
+            	background-color: #FFD166;
+            	width: 25px;
+            	height: 25px;
+            	margin-top: 20px;
+            	border-radius: 3px;
+            }
+
+            .legend-square-3 {
+            	background-color: #06D6A0;
+            	width: 25px;
+            	height: 25px;
+            	margin-top: 20px;
+            	border-radius: 3px;
+            }
+
+            .legend-text {
+            	margin-top: 25px;
+            	margin-left: 10px;
+            	font-family: "Roboto";
+            	font-weight: 300;
+            	font-size: 15;
+            	color: #636c77;
+            }
 
 		</style>
 	</head>
@@ -218,33 +307,93 @@
 					<div class="title">
 						Fuel Efficiency
 					</div>
+					<hr>
 					<div class="segmented-control-container">
 						<div class="segmented-control-item">
 							<div class="sub-title">
-								Engine Type
+								Fuel Type
 							</div>
 							<div>
 								<ul class="buttonGroup" id="engine-type">
-									<li class="selected" id="et">Gasoline</li>
-									<li id="et">Diesel</li>
-									<li id="et">Electricity</li>
+									<li class="selected">All</li>
+									<li>Gasoline</li>
+									<li>Diesel</li>
+									<li>Electricity</li>
 								</ul>
 							</div>
 						</div>
 						<div class="segmented-control-item">
 							<div class="sub-title">
-								Cylinders
+								No. of Cylinders
 							</div>
 							<div>
 								<ul class="buttonGroup" id="cylinder-type">
+									<li class="selected">All</li>
 									<li>0</li>
 									<li>3</li>
-									<li class="selected">4</li>
+									<li>4</li>
 									<li>6</li>
 									<li>8</li>
 									<li>10</li>
 									<li>12</li>
 								</ul>
+							</div>
+						</div>
+						<div class="segmented-control-item">
+							<div class="sub-title">
+								Manufacturer Region
+							</div>
+							<div>
+								<ul class="buttonGroup" id="region-type">
+									<li class="selected">All</li>
+									<li>Asia</li>
+									<li>Europe</li>
+									<li>North America</li>
+								</ul>
+							</div>
+						</div>
+						<div class="segmented-control-item">
+							<div class="sub-title">
+								Average On
+							</div>
+							<div>
+								<ul class="buttonGroup" id="average-type">
+									<li class="selected">Highway</li>
+									<li>City</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="legend-container">
+						<div class="sub-title">
+							Average Miles Per Gallon (MPG) of Manufacturers by Region. 
+						</div>
+						<div></div>
+						<div class="legend">
+							<div class="legend-item">
+								<div>
+									<svg class="legend-square-1"></svg>
+								</div>
+								<div class="legend-text">
+									Asia
+								</div>
+							</div>
+							<div class="legend-item">
+								<div>
+									<svg class="legend-square-2"></svg>
+								</div>
+								<div class="legend-text">
+									Europe
+								</div>
+							</div>
+							<div class="legend-item">
+								<div>
+									<svg class="legend-square-3"></svg>
+								</div>
+								<div class="legend-text">
+									North America
+								</div>
 							</div>
 						</div>
 					</div>
@@ -265,10 +414,16 @@
 			<div class="grid-container-bottom">
 				<div></div>
 				<div class="svg-container-bottom-left">
+					<div class="sub-title" style="margin-bottom: 15px; margin-top: -10px;">
+						No. of Cars from Manufacurers by Region
+					</div>
 					<svg class="svg-style-sub-left" id="bubble-chart"></svg>
 				</div>
 				<div></div>
-				<div>
+				<div class="svg-container-bottom-right">
+					<div class="sub-title" style="margin-bottom: 15px; margin-top: -10px;">
+						Average MPG City vs Average MPG Highway
+					</div>
 					<svg class="svg-style-sub-right" id="scatter-plot"></svg>
 				</div>
 				<div></div>
@@ -280,9 +435,13 @@
 
 			var ul = document.getElementsByTagName("UL");
 
-			var selected_engine_type = "Gasoline";
-			var selected_cylinder_type = "4";
-			var selected_env = "Highway";
+			var selected_engine_type = "All";
+			var selected_cylinder_type = "All";
+			var selected_avg_type = "Highway";
+			var selected_region_type = "All";
+			var last_target_id = "";
+			var last_default_val = "";
+			var duration = 20;
 
 			for(var i = 0, j = ul.length; i < j; i++) {
 				if (/\bbuttonGroup\b/.test(ul[i].className)) {
@@ -295,6 +454,12 @@
 
 			var cylinder = document.getElementById("cylinder-type");
 			cylinder.addEventListener("click", plotGraphs, false);
+
+			var average = document.getElementById("average-type");
+			average.addEventListener("click", plotGraphs, false);
+
+			var region = document.getElementById("region-type");
+			region.addEventListener("click", plotGraphs, false);
 
 			async function plotGraphs() {
 
@@ -316,13 +481,17 @@
 							  "58DEC1", "C5AE52", "D87B64", "D9BB75", "3F222C", "9C584A", "9C342C", "779B8A", "326012", "C68D26",
 							  "FA224B", "2B6985", "7E906C", "856257"];
 
-				console.log(data)
+				// console.log(data)
 
 				var selected_data = [];
+				var current_index = 0;
 
 				data.forEach(function(d) {
 
-					if (d.Fuel == selected_engine_type && d.EngineCylinders == selected_cylinder_type) {
+					if ((selected_engine_type == "All" || d.Fuel == selected_engine_type) 
+						&& (selected_cylinder_type == "All" || d.EngineCylinders == selected_cylinder_type)
+						&& (selected_region_type == "All" || d.MakeOrigin == selected_region_type)) {
+
 						var found = false;
 						var index = 0;
 						for (var i = 0; i < selected_data.length; i++) {
@@ -333,41 +502,110 @@
 								break;
 							}
 						}
+
+						var avg = selected_avg_type == "Highway" ? parseFloat(d.AverageHighwayMPG) : parseFloat(d.AverageCityMPG);
+
 						if (found) {
 							var value = selected_data[index];
-							value.avg += parseFloat(d.AverageHighwayMPG);
-							value.avg = (value.avg / 2);
+							value.avg = (value.avg + avg) / 2;
+							value.count += 1;
+							value.cityAvg = (value.cityAvg + d.AverageCityMPG) / 2;
+							value.highwayAvg = (value.highwayAvg + d.AverageHighwayMPG) / 2;
 							selected_data[index] = value;
 						} else {
 
 							let car_make = {
 								make : d.Make,
-								avg : parseFloat(d.AverageHighwayMPG),
+								avg : avg,
 								color : d.HexColor,
 								origin : d.MakeOrigin,
+								count : 1,
+								cityAvg : d.AverageCityMPG,
+								highwayAvg : d.AverageHighwayMPG,
 							}
+
 							selected_data.push(car_make);
 						}
 					}
+
+					current_index += 1;
+
+					if (current_index == data.length) {
+						callback();
+					}
 				});
 
-				var averages = [];
-				var makes = [];
+				function callback() {
 
-				selected_data.forEach(function(d) {
-					averages.push(d.avg);
-					makes.push(d.make);
-				});
+					if (selected_data.length > 0) {
 
-				selected_data.sort(compare);
+						var averages = [];
+						var makes = [];
+						var counts = [];
 
-				var maxAverage = d3.max(averages, function(d) { return d; });
+						selected_data.forEach(function(d) {
+							averages.push(d.avg);
+							makes.push(d.make);
+							counts.push(d.count);
+						});
 
-				plotBarChart(selected_data, maxAverage);
+						selected_data.sort(compare);
+
+						var maxAverage = d3.max(averages, function(d) { return d; });
+
+						plotBarChart(selected_data, maxAverage);
+
+						plotBubbleGraph(selected_data, makes, counts);
+
+						plotScatterPlot(data);
+
+					} else {
+
+						var message = "There is no data to be displayed for the current selection. \nFilters will revert your previous selection.";
+
+						if (window.confirm(message)) {
+							revertToDefault();
+						} else {
+							revertToDefault();
+						}					
+					}
+				}
+
+				function revertToDefault() {
+					
+					if (last_target_id == "engine-type") {
+						selected_engine_type = last_default_val;
+					} else if (last_target_id == "cylinder-type") {
+						selected_cylinder_type = last_default_val;
+					} else if (last_target_id == "region-type") {
+						selected_region_type = last_default_val;
+					} else if (last_target_id == "average-type") {
+						selected_avg_type = last_default_val;
+					}
+
+					var ul = document.getElementsByTagName("UL");
+
+					for (var i = 0; i < ul.length; i++) {
+						
+						var target = ul[i];
+						
+						if (target.id == last_target_id) {
+							
+							var li = target.getElementsByTagName("LI");
+							
+							for (var j = 0; j < li.length; j++) {
+								var _  =li[j];
+								_.className = _.className.replace(/\bselected\b/, "")
+								if (_.innerHTML == last_default_val) {
+									_.className += "selected";
+								}
+							}
+						}
+					}
+				}
 
 				function plotBarChart(selected_data, maxAverage) {
 
-					// define scales and axises
 				    var xScale = d3.scaleBand()
 				        .domain(data.map(function(d){ return d.make; }))
 				        .range([0, width - (margin * 2)])
@@ -403,7 +641,7 @@
 					   .attr('class', 'x axis')
 					   .attr('transform', `translate(0, ${height - (margin * 2)})`)
 					   .call(xAxis)
-					   .selectAll("Text")
+					   .selectAll("text")
 					   .attr("dx", "-40px")
 			           .attr("dy", "-8px")
 			           .attr("transform", "rotate(-90)");
@@ -422,18 +660,17 @@
 					   .data(selected_data)
 					   .enter()
 					   .append('rect')
-					   // .attr('class', 'bar')
 					   .attr('x', function(d) { return xScale(d.make); })
 					   .attr('width', xScale.bandwidth())
 					   .attr('y', height - (margin * 2))
 					   .attr('fill', function(d, i) { return selected_data[i].color; })
 					   .attr('height', 0)
 					   .on('mouseover', function(d, i) {
-					   		d3.select(this).attr("fill", "#3d4c51");
-					    	tooltip.transition().duration(200).style('opacity', 0.9);
-					    	tooltip.html(`Average: <span>${d.avg}</span>`)
-					    		   .style('left', `${d3.event.layerX}px`)
-					      		   .style('top', `${(d3.event.layerY - 28)}px`);
+					   		d3.select(this).attr("fill", "#26547C");
+					    	tooltip.transition().duration(200).style('opacity', 1.0);
+					    	tooltip.html(`Average: <span>${d.avg}</span><br>No. of Cars: <span>${d.count}</span>`)
+					    		   .style('left', `${d3.event.pageX - 87}px`)
+					      		   .style('top', `${(d3.event.target.getBoundingClientRect().top - 83)}px`);
 					   })
 					   .on('mouseout', function(d, i) { 
 					   		d3.select(this).attr("fill", selected_data[i].color);
@@ -444,13 +681,246 @@
 					   .ease(d3.easeLinear)
 					   .attr('y', function(d) { return yScale(d.avg); })
 					   .attr('height', function(d) { return height - (margin * 2) - yScale(d.avg); });
-
 				}
 
-				function plotBubbleGraph(selected_data) {
+				function plotBubbleGraph(selected_data, makes, counts) {
 
+					width = 500;
+					height = 500;
+					margin = 50;
 
+					duration = 5;
 
+					var maxCount = Math.max(...counts);
+					console.log(maxCount);
+
+					var multiplier = maxCount > 4 ? 7 : 15;
+
+					d3.select("#bubble-chart").selectAll("*").remove();
+
+					var svg = d3.select("#bubble-chart");
+
+				    var pack = d3.pack()
+				    			 .size([width, height])
+    							 .padding(1.5);
+
+    				var root = d3.hierarchy({children: selected_data}).sum(function(d) { return d.count; });
+
+    				var node = svg.selectAll(".node")
+    							  .data(pack(root).leaves())
+    							  .enter()
+    							  .append("g")
+      							  .attr("class", "node")
+      							  .attr("transform", function(d) { 
+      							  		return "translate(" + d.x + "," + d.y + ")"; 
+      							  });
+
+      				var tooltip = d3.select("body")
+								    .append("div")
+								    .style("width", "100px")
+								    .style("align", "center")
+								    .style("position", "absolute")
+								    .style("z-index", "10")
+								    .style("visibility", "hidden")
+								    .style("color", "white")
+								    .style("padding", "10px")
+								    .style("background-color", "#26547C")
+								    .style("border-radius", "6px")
+								    .style("font", "15px sans-serif")
+								    .text("bubbleTip");
+
+      				node.append("circle")
+				      	.attr("r", function(d, i) { return (selected_data[i].count * 1); })
+				      	.attr("padding", "5px")
+				      	.attr("stroke-width", "2px")
+				      	.attr("stroke", "#ffffff")
+				      	.style("fill", function(d, i) { return selected_data[i].color; })
+				      	.on("mouseover", function(d, i) { 
+				      		d3.select(this).attr("r", function(d, i) {
+				      			return ((d.data.count * multiplier) + 15);
+				      		});
+
+				      		d3.select(this).attr("stroke", "#26547C");
+
+				      		tooltip.text(d.data.make + ": " + d.data.avg + " MPG" + "\nCars: " + d.data.count);
+              				tooltip.style("visibility", "visible");
+				      	})
+				      	.on("mousemove", function() {
+          					return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
+      					})
+				      	.on("mouseout", function(d, i) {
+				      		d3.select(this).attr("r", function(d, i) {
+				      			return (d.data.count * multiplier);
+				      		});
+
+				      		d3.select(this).attr("stroke", "#ffffff");
+
+				      		tooltip.style("visibility", "hidden");
+				      	})
+			    		.transition()
+				      	.duration(500)
+				      	.delay(function(d, i) { return (i * duration); })
+    					.attr("r", function(d, i) { return (selected_data[i].count * multiplier); });
+
+    				node.append("text")
+    					.attr("text-anchor", "middle")
+    					.style("opacity", 0)
+    					.attr("font-size", 5)
+    					.attr("x", "20px")
+    					.attr("y", "5px")
+    					.transition()
+				      	.duration(500)
+				      	.delay(function(d, i) { return (i * duration); })
+    					.text(function(d, i) { return selected_data[i].make; })
+    					.attr("font-size", 12)
+    					.attr("font-family", "Roboto")
+    					.attr("font-weight", "500")
+    					.attr("fill", "#636c77")
+    					.style("opacity", 1.0);
+				}
+
+				function plotScatterPlot(data) {
+
+					width = 500;
+					height = 500;
+					margin = 50;
+
+					var radii = [];
+					var avgCity = [];
+					var avgHighway = [];
+
+					var plot_data = [];
+
+					data.forEach(function (d) {
+
+						var shouldAdd = false;
+
+						if ((selected_engine_type == "All" || d.Fuel == selected_engine_type) 
+						&& (selected_cylinder_type == "All" || d.EngineCylinders == selected_cylinder_type)
+						&& (selected_region_type == "All" || d.MakeOrigin == selected_region_type)) {
+							shouldAdd = true;
+						}
+
+						if (shouldAdd) {
+							var city = parseInt(d.AverageCityMPG);
+							var highway = parseInt(d.AverageHighwayMPG)
+							avgCity.push(city)
+							avgHighway.push(highway)
+						    plot_data.push([city, highway, d.HexColor, d.Make, (5 + parseInt(d.EngineCylinders))]);
+						    radii.push((5 + parseInt(d.EngineCylinders)))
+						}
+					});
+
+					d3.select("#scatter-plot").selectAll("*").remove();
+
+					var dl = plot_data.length;
+
+					var minX = Math.min(...avgCity);
+					var maxX = Math.max(...avgCity);
+
+					var minY = Math.min(...avgHighway);
+					var maxY = Math.max(...avgHighway);
+
+					var xScale = d3.scaleLog()
+					               .domain([10, 150])
+					               .range([0, width - (margin * 2)]);
+
+					var yScale = d3.scaleLog()
+				        .domain([150, 10])
+				        .range([height - margin, margin]);
+
+				    var tooltip = d3.select("body")
+								    .append("div")
+								    .style("width", "auto")
+								    .style("align", "center")
+								    .style("position", "absolute")
+								    .style("z-index", "10")
+								    .style("visibility", "hidden")
+								    .style("color", "white")
+								    .style("padding", "10px")
+								    .style("background-color", "#26547C")
+								    .style("border-radius", "6px")
+								    .style("font", "15px sans-serif")
+								    .text("scatterTip");
+
+					d3.select("#scatter-plot")
+					  .append("g")
+					  .attr("transform", "translate("+margin+","+margin+")")
+					  .selectAll("circle")
+					  .data(plot_data)
+					  .enter()
+					  .append("circle")
+					  .attr("cx", function(d, i) { return xScale(d[0]); })
+					  .attr("cy", function(d, i) { return (height - yScale(d[1])); })
+					  .attr("r", function(d, i) { return 1; })
+					  .style("fill", function(d, i) { return d[2]; })
+					  .style("stroke", "#ffffff")
+					  .style("stroke-width", "2")
+					  .on("mouseover", function(d, i) { 
+				      		d3.select(this).attr("r", function(d, i) {
+				      			return (plot_data[i][4] + 10);
+				      		});
+
+				      		d3.select(this).style("stroke", "#26547C");
+
+				      		tooltip.text(d[3] + ",\n " + "City: " + d[0] + " MPG, " + "\nHighway: " + d[1]);
+              				tooltip.style("visibility", "visible");
+				      })
+				      .on("mousemove", function() {
+          					return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
+      				  })
+				      .on("mouseout", function(d, i) {
+				      		d3.select(this).attr("r", function(d, i) {
+				      			return (plot_data[i][4]);
+				      		});
+
+				      		d3.select(this).style("stroke", "#ffffff");
+
+				      		tooltip.style("visibility", "hidden");
+				      })
+					  .transition()
+					  .duration(500)
+				      .delay(function(d, i) { return (i * duration); })
+				      .attr("r", function(d, i) { return radii[i]; });
+
+					var xAxis = d3.axisBottom(avgCity)
+					              .scale(xScale)
+					  	          .tickValues([10, 20, 50, 100])
+					  	          .tickFormat(d3.format("~s"));
+
+					var yAxisSale = d3.scaleLog()
+					               .domain([10, 150])
+					               .range([height - (margin * 2), 0]);
+
+					var yAxis = d3.axisLeft(avgHighway)
+					  	          .scale(yAxisSale)
+					  	          .tickValues([10, 20, 50, 100])
+					  	          .tickFormat(d3.format("~s"));
+
+					d3.select("#scatter-plot")
+					  .append("g")
+					  .attr("class", "y axis")
+					  .attr("transform", "translate("+ margin +","+margin+")")
+					  .call(yAxis)
+					  .append('text')
+					  .attr('x', 5)
+					  .attr('y', -5)
+					  .style('text-anchor', 'end')
+					  .text('Avg City')
+					  .style("text-anchor", "end");
+
+					d3.select("#scatter-plot")
+					  .append("g")
+					  .attr("class", "x axis")
+					  .attr("transform", "translate("+margin+","+(height - margin)+")")
+					  .call(xAxis)
+					  .append('text')
+					  .attr('x', width - (margin * 2) - 30)
+					  .attr('y', 30)
+					  .style('text-anchor', 'start')
+					  .text('Avg Highway')
+					  .style("text-anchor", "start")
+					  .style("fill", "#636c77");
 				}
 
 				function compare(a, b) {
@@ -485,10 +955,24 @@
 						var _ = li[m];
 						if (_.className == "selected") {
 							if (target.id == "engine-type") {
+								last_default_val = selected_engine_type;
 								selected_engine_type = _.innerHTML;
+								last_target_id = target.id;
 								break;
 							} else if (target.id == "cylinder-type") {
+								last_default_val = selected_cylinder_type;
 								selected_cylinder_type = _.innerHTML;
+								last_target_id = target.id;
+								break;
+							} else if (target.id == "region-type") {
+								last_default_val = selected_region_type;
+								selected_region_type = _.innerHTML;
+								last_target_id = target.id;
+								break;
+							} else if (target.id == "average-type") {
+								last_default_val = selected_avg_type;
+								selected_avg_type = _.innerHTML;
+								last_target_id = target.id;
 								break;
 							}
 						}
