@@ -100,6 +100,16 @@
 				color: #26547C;
 			}
 
+			.sub-title-2 {
+				display: grid;
+				grid-template-rows: 70% 30%;
+				padding-top: 20px;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 400;
+				font-size: 20px;
+				color: #26547C;
+			}
+
 			.segmented-control-item {
 				display: grid;
 				grid-template-rows: : auto auto;
@@ -295,6 +305,12 @@
             	color: #636c77;
             }
 
+            .info-message {
+            	font-size: 15px;
+            	font-weight: 300;
+            	color: #636c77;
+            }
+
 		</style>
 	</head>
 	<body onload='plotGraphs()' style="background-color: white">		
@@ -367,7 +383,8 @@
 					<hr>
 					<div class="legend-container">
 						<div class="sub-title">
-							Average Miles Per Gallon (MPG) of Manufacturers by Region. 
+							<div style="margin-top: -10px; margin-bottom: 5px;">Average Miles Per Gallon (MPG) of Manufacturers by Region.</div>
+							<div class="info-message" >Hover over element for more info.</div>
 						</div>
 						<div></div>
 						<div class="legend">
@@ -415,14 +432,16 @@
 				<div></div>
 				<div class="svg-container-bottom-left">
 					<div class="sub-title" style="margin-bottom: 15px; margin-top: -10px;">
-						No. of Cars from Manufacurers by Region
+						<div style="margin-top: -10px; margin-bottom: 5px;">No. of Cars from Manufacurers by Region</div>
+						<div class="info-message">Hover over element for more info.</div>
 					</div>
 					<svg class="svg-style-sub-left" id="bubble-chart"></svg>
 				</div>
 				<div></div>
 				<div class="svg-container-bottom-right">
 					<div class="sub-title" style="margin-bottom: 15px; margin-top: -10px;">
-						Average MPG City vs Average MPG Highway
+						<div style="margin-top: -10px; margin-bottom: 5px;">Average MPG City vs Average MPG Highway</div>
+						<div class="info-message">Hover over element for more info.</div>
 					</div>
 					<svg class="svg-style-sub-right" id="scatter-plot"></svg>
 				</div>
@@ -627,7 +646,7 @@
 				    
 				    const svg = d3.select('#bar-chart')
 								  .append('g')
-								  .attr('transform', `translate(${margin}, ${margin})`);
+								  .attr('transform', `translate(${margin}, ${margin - 30})`);
 
 					const tooltip = d3.select('body').append('div')
 									  .attr('class', 'tooltip')
@@ -642,7 +661,7 @@
 					   .attr('transform', `translate(0, ${height - (margin * 2)})`)
 					   .call(xAxis)
 					   .selectAll("text")
-					   .attr("dx", "-40px")
+					   .attr("dx", "-60px")
 			           .attr("dy", "-8px")
 			           .attr("transform", "rotate(-90)");
 
