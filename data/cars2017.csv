@@ -1,147 +1,147 @@
 ﻿Make,MakeOrigin,Fuel,HexColor,EngineCylinders,AverageHighwayMPG,AverageCityMPG
-Acura,Asia,Gasoline,#337430,4,35,25
-Acura,Asia,Gasoline,#337430,6,28,21
-Alfa Romeo,Europe,Gasoline,#EBB421,4,33,24
-Alfa Romeo,Europe,Gasoline,#EBB421,6,24,17
-Aston Martin,Europe,Gasoline,#EBB421,12,19,12
-Audi,Europe,Gasoline,#EBB421,4,30,23
-Audi,Europe,Gasoline,#EBB421,6,27,19
-Audi,Europe,Gasoline,#EBB421,8,26,17
-Audi,Europe,Gasoline,#EBB421,10,22,14
-Audi,Europe,Gasoline,#EBB421,4,32,24
-Bentley,Europe,Gasoline,#EBB421,8,22,13
-Bentley,Europe,Gasoline,#EBB421,12,20,12
-BMW,Europe,Diesel,#EBB421,4,41,30
-BMW,Europe,Diesel,#EBB421,6,29,23
-BMW,Europe,Electricity,#EBB421,0,109,133
-BMW,Europe,Gasoline,#EBB421,2,33,36
-BMW,Europe,Gasoline,#EBB421,3,29,28
-BMW,Europe,Gasoline,#EBB421,4,32,23
-BMW,Europe,Gasoline,#EBB421,6,28,19
-BMW,Europe,Gasoline,#EBB421,8,23,15
-BMW,Europe,Gasoline,#EBB421,12,20,13
-Buick,North America,Gasoline,#CC4110,4,27,20
-Buick,North America,Gasoline,#CC4110,4,31,23
-Buick,North America,Gasoline,#CC4110,6,26,18
-Cadillac,North America,Gasoline,#CC4110,4,30,22
-Cadillac,North America,Gasoline,#CC4110,6,25,17
-Cadillac,North America,Gasoline,#CC4110,8,21,14
-Cadillac,North America,Gasoline,#CC4110,4,32,22
-Cadillac,North America,Gasoline,#CC4110,6,26,18
-Cadillac,North America,Gasoline,#CC4110,8,21,15
-Chevrolet,North America,Diesel,#CC4110,4,29,21
-Chevrolet,North America,Electricity,#CC4110,0,110,128
-Chevrolet,North America,Gasoline,#CC4110,4,31,21
-Chevrolet,North America,Gasoline,#CC4110,8,23,15
-Chevrolet,North America,Gasoline,#CC4110,4,34,27
-Chevrolet,North America,Gasoline,#CC4110,6,24,17
-Chevrolet,North America,Gasoline,#CC4110,8,21,15
-Chrysler,North America,Gasoline,#CC4110,8,25,16
-Chrysler,North America,Gasoline,#CC4110,4,36,23
-Chrysler,North America,Gasoline,#CC4110,6,29,20
-Dodge,North America,Gasoline,#CC4110,8,24,15
-Dodge,North America,Gasoline,#CC4110,8,23,14
-Dodge,North America,Gasoline,#CC4110,10,19,12
-Dodge,North America,Gasoline,#CC4110,4,25,19
-Dodge,North America,Gasoline,#CC4110,6,27,18
-Ferrari,Europe,Gasoline,#EBB421,8,22,16
-Ferrari,Europe,Gasoline,#EBB421,12,16,12
-Fiat,Europe,Electricity,#EBB421,0,103,121
-Fiat,Europe,Gasoline,#EBB421,4,34,26
-Fiat,Europe,Gasoline,#EBB421,4,30,22
-Ford,North America,Electricity,#CC4110,0,96,118
-Ford,North America,Gasoline,#CC4110,4,25,19
-Ford,North America,Gasoline,#CC4110,6,18,11
-Ford,North America,Gasoline,#CC4110,8,21,14
-Ford,North America,Gasoline,#CC4110,3,40,29
-Ford,North America,Gasoline,#CC4110,4,31,24
-Ford,North America,Gasoline,#CC4110,6,23,17
-Ford,North America,Gasoline,#CC4110,8,22,15
-Genesis,Asia,Gasoline,#337430,6,24,17
-Genesis,Asia,Gasoline,#337430,8,23,15
-Genesis,Asia,Gasoline,#337430,6,27,17
-GMC,North America,Diesel,#CC4110,4,29,21
-GMC,North America,Gasoline,#CC4110,4,27,20
-GMC,North America,Gasoline,#CC4110,6,23,17
-GMC,North America,Gasoline,#CC4110,8,21,15
-Honda,Asia,Gasoline,#337430,4,38,30
-Honda,Asia,Gasoline,#337430,4,37,29
-Honda,Asia,Gasoline,#337430,6,28,19
-Hyundai,Asia,Electricity,#337430,0,122,150
-Hyundai,Asia,Gasoline,#337430,4,34,27
-Hyundai,Asia,Gasoline,#337430,6,25,18
-Infiniti,Asia,Gasoline,#337430,4,30,22
-Infiniti,Asia,Gasoline,#337430,6,27,20
-Infiniti,Asia,Gasoline,#337430,8,22,15
-Infiniti,Asia,Gasoline,#337430,4,27,25
-Jaguar,Europe,Diesel,#EBB421,4,39,30
-Jaguar,Europe,Gasoline,#EBB421,4,30,21
-Jaguar,Europe,Gasoline,#EBB421,6,26,18
-Jaguar,Europe,Gasoline,#EBB421,8,23,15
-Jeep,North America,Gasoline,#CC4110,6,27,19
-Jeep,North America,Gasoline,#CC4110,8,22,14
-Jeep,North America,Gasoline,#CC4110,4,31,24
-Jeep,North America,Gasoline,#CC4110,8,19,13
-Jeep,North America,Gasoline,#CC4110,4,27,21
-Jeep,North America,Gasoline,#CC4110,6,22,17
-Kia,Asia,Electricity,#337430,0,92,120
-Kia,Asia,Gasoline,#337430,8,23,15
-Kia,Asia,Gasoline,#337430,4,33,27
-Kia,Asia,Gasoline,#337430,6,25,18
-Lamborghini,Europe,Gasoline,#EBB421,10,21,14
-Lamborghini,Europe,Gasoline,#EBB421,12,17,10
-Land Rover,Europe,Diesel,#EBB421,6,28,22
-Land Rover,Europe,Gasoline,#EBB421,4,27,20
-Land Rover,Europe,Gasoline,#EBB421,6,23,17
-Land Rover,Europe,Gasoline,#EBB421,8,19,14
-Lexus,Asia,Gasoline,#337430,4,30,22
-Lexus,Asia,Gasoline,#337430,6,28,21
-Lexus,Asia,Gasoline,#337430,8,22,16
-Lexus,Asia,Gasoline,#337430,4,36,39
-Lexus,Asia,Gasoline,#337430,6,28,20
-Lincoln,North America,Gasoline,#CC4110,4,29,23
-Lincoln,North America,Gasoline,#CC4110,6,24,16
-Lotus,Europe,Gasoline,#EBB421,6,24,17
-Maserati,Europe,Gasoline,#EBB421,6,24,16
-Maserati,Europe,Gasoline,#EBB421,8,20,14
-Mazda,Asia,Gasoline,#337430,4,34,26
-Mazda,Asia,Gasoline,#337430,4,35,27
-McLaren Automotive,Europe,Gasoline,#EBB421,8,23,16
-Mercedes-Benz,Europe,Electricity,#EBB421,0,82,85
-Mercedes-Benz,Europe,Gasoline,#EBB421,4,30,23
-Mercedes-Benz,Europe,Gasoline,#EBB421,6,25,19
-Mercedes-Benz,Europe,Gasoline,#EBB421,8,22,16
-Mercedes-Benz,Europe,Gasoline,#EBB421,12,20,13
-MINI,Europe,Gasoline,#EBB421,4,33,24
-Mitsubishi,Asia,Electricity,#337430,0,102,121
-Mitsubishi,Asia,Gasoline,#337430,6,27,20
-Mitsubishi,Asia,Gasoline,#337430,3,42,35
-Mitsubishi,Asia,Gasoline,#337430,4,31,24
-Nissan,Asia,Electricity,#337430,0,101,124
-Nissan,Asia,Gasoline,#337430,4,31,26
-Nissan,Asia,Gasoline,#337430,6,26,18
-Nissan,Asia,Gasoline,#337430,4,33,26
-Nissan,Asia,Gasoline,#337430,6,25,18
-Nissan,Asia,Gasoline,#337430,8,20,14
-Porsche,Europe,Gasoline,#EBB421,4,27,21
-Porsche,Europe,Gasoline,#EBB421,6,26,19
-Porsche,Europe,Gasoline,#EBB421,8,21,14
-Ram,North America,Gasoline,#CC4110,8,21,14
-Ram,North America,Gasoline,#CC4110,4,28,21
-Ram,North America,Gasoline,#CC4110,6,24,17
-Rolls-Royce,Europe,Gasoline,#EBB421,12,19,12
-Roush Performance,North America,Gasoline,#CC4110,8,23,14
-Smart,Europe,Gasoline,#EBB421,3,39,32
-Subaru,Asia,Gasoline,#337430,4,27,21
-Subaru,Asia,Gasoline,#337430,4,33,25
-Subaru,Asia,Gasoline,#337430,6,28,20
-Tesla,North America,Electricity,#CC4110,0,98,92
-Toyota,Asia,Gasoline,#337430,4,30,23
-Toyota,Asia,Gasoline,#337430,4,35,32
-Toyota,Asia,Gasoline,#337430,6,25,20
-Toyota,Asia,Gasoline,#337430,8,18,13
-Volkswagen,Europe,Gasoline,#EBB421,4,28,21
-Volkswagen,Europe,Gasoline,#EBB421,4,33,24
-Volkswagen,Europe,Gasoline,#EBB421,6,25,18
-Volvo,Europe,Gasoline,#EBB421,4,29,22
-Volvo,Europe,Gasoline,#EBB421,4,32,23
+Acura,Asia,Gasoline,#EF476F,4,35,25
+Acura,Asia,Gasoline,#EF476F,6,28,21
+Alfa Romeo,Europe,Gasoline,#FFD166,4,33,24
+Alfa Romeo,Europe,Gasoline,#FFD166,6,24,17
+Aston Martin,Europe,Gasoline,#FFD166,12,19,12
+Audi,Europe,Gasoline,#FFD166,4,30,23
+Audi,Europe,Gasoline,#FFD166,6,27,19
+Audi,Europe,Gasoline,#FFD166,8,26,17
+Audi,Europe,Gasoline,#FFD166,10,22,14
+Audi,Europe,Gasoline,#FFD166,4,32,24
+Bentley,Europe,Gasoline,#FFD166,8,22,13
+Bentley,Europe,Gasoline,#FFD166,12,20,12
+BMW,Europe,Diesel,#FFD166,4,41,30
+BMW,Europe,Diesel,#FFD166,6,29,23
+BMW,Europe,Electricity,#FFD166,0,109,133
+BMW,Europe,Gasoline,#FFD166,2,33,36
+BMW,Europe,Gasoline,#FFD166,3,29,28
+BMW,Europe,Gasoline,#FFD166,4,32,23
+BMW,Europe,Gasoline,#FFD166,6,28,19
+BMW,Europe,Gasoline,#FFD166,8,23,15
+BMW,Europe,Gasoline,#FFD166,12,20,13
+Buick,North America,Gasoline,#06D6A0,4,27,20
+Buick,North America,Gasoline,#06D6A0,4,31,23
+Buick,North America,Gasoline,#06D6A0,6,26,18
+Cadillac,North America,Gasoline,#06D6A0,4,30,22
+Cadillac,North America,Gasoline,#06D6A0,6,25,17
+Cadillac,North America,Gasoline,#06D6A0,8,21,14
+Cadillac,North America,Gasoline,#06D6A0,4,32,22
+Cadillac,North America,Gasoline,#06D6A0,6,26,18
+Cadillac,North America,Gasoline,#06D6A0,8,21,15
+Chevrolet,North America,Diesel,#06D6A0,4,29,21
+Chevrolet,North America,Electricity,#06D6A0,0,110,128
+Chevrolet,North America,Gasoline,#06D6A0,4,31,21
+Chevrolet,North America,Gasoline,#06D6A0,8,23,15
+Chevrolet,North America,Gasoline,#06D6A0,4,34,27
+Chevrolet,North America,Gasoline,#06D6A0,6,24,17
+Chevrolet,North America,Gasoline,#06D6A0,8,21,15
+Chrysler,North America,Gasoline,#06D6A0,8,25,16
+Chrysler,North America,Gasoline,#06D6A0,4,36,23
+Chrysler,North America,Gasoline,#06D6A0,6,29,20
+Dodge,North America,Gasoline,#06D6A0,8,24,15
+Dodge,North America,Gasoline,#06D6A0,8,23,14
+Dodge,North America,Gasoline,#06D6A0,10,19,12
+Dodge,North America,Gasoline,#06D6A0,4,25,19
+Dodge,North America,Gasoline,#06D6A0,6,27,18
+Ferrari,Europe,Gasoline,#FFD166,8,22,16
+Ferrari,Europe,Gasoline,#FFD166,12,16,12
+Fiat,Europe,Electricity,#FFD166,0,103,121
+Fiat,Europe,Gasoline,#FFD166,4,34,26
+Fiat,Europe,Gasoline,#FFD166,4,30,22
+Ford,North America,Electricity,#06D6A0,0,96,118
+Ford,North America,Gasoline,#06D6A0,4,25,19
+Ford,North America,Gasoline,#06D6A0,6,18,11
+Ford,North America,Gasoline,#06D6A0,8,21,14
+Ford,North America,Gasoline,#06D6A0,3,40,29
+Ford,North America,Gasoline,#06D6A0,4,31,24
+Ford,North America,Gasoline,#06D6A0,6,23,17
+Ford,North America,Gasoline,#06D6A0,8,22,15
+Genesis,Asia,Gasoline,#EF476F,6,24,17
+Genesis,Asia,Gasoline,#EF476F,8,23,15
+Genesis,Asia,Gasoline,#EF476F,6,27,17
+GMC,North America,Diesel,#06D6A0,4,29,21
+GMC,North America,Gasoline,#06D6A0,4,27,20
+GMC,North America,Gasoline,#06D6A0,6,23,17
+GMC,North America,Gasoline,#06D6A0,8,21,15
+Honda,Asia,Gasoline,#EF476F,4,38,30
+Honda,Asia,Gasoline,#EF476F,4,37,29
+Honda,Asia,Gasoline,#EF476F,6,28,19
+Hyundai,Asia,Electricity,#EF476F,0,122,150
+Hyundai,Asia,Gasoline,#EF476F,4,34,27
+Hyundai,Asia,Gasoline,#EF476F,6,25,18
+Infiniti,Asia,Gasoline,#EF476F,4,30,22
+Infiniti,Asia,Gasoline,#EF476F,6,27,20
+Infiniti,Asia,Gasoline,#EF476F,8,22,15
+Infiniti,Asia,Gasoline,#EF476F,4,27,25
+Jaguar,Europe,Diesel,#FFD166,4,39,30
+Jaguar,Europe,Gasoline,#FFD166,4,30,21
+Jaguar,Europe,Gasoline,#FFD166,6,26,18
+Jaguar,Europe,Gasoline,#FFD166,8,23,15
+Jeep,North America,Gasoline,#06D6A0,6,27,19
+Jeep,North America,Gasoline,#06D6A0,8,22,14
+Jeep,North America,Gasoline,#06D6A0,4,31,24
+Jeep,North America,Gasoline,#06D6A0,8,19,13
+Jeep,North America,Gasoline,#06D6A0,4,27,21
+Jeep,North America,Gasoline,#06D6A0,6,22,17
+Kia,Asia,Electricity,#EF476F,0,92,120
+Kia,Asia,Gasoline,#EF476F,8,23,15
+Kia,Asia,Gasoline,#EF476F,4,33,27
+Kia,Asia,Gasoline,#EF476F,6,25,18
+Lamborghini,Europe,Gasoline,#FFD166,10,21,14
+Lamborghini,Europe,Gasoline,#FFD166,12,17,10
+Land Rover,Europe,Diesel,#FFD166,6,28,22
+Land Rover,Europe,Gasoline,#FFD166,4,27,20
+Land Rover,Europe,Gasoline,#FFD166,6,23,17
+Land Rover,Europe,Gasoline,#FFD166,8,19,14
+Lexus,Asia,Gasoline,#EF476F,4,30,22
+Lexus,Asia,Gasoline,#EF476F,6,28,21
+Lexus,Asia,Gasoline,#EF476F,8,22,16
+Lexus,Asia,Gasoline,#EF476F,4,36,39
+Lexus,Asia,Gasoline,#EF476F,6,28,20
+Lincoln,North America,Gasoline,#06D6A0,4,29,23
+Lincoln,North America,Gasoline,#06D6A0,6,24,16
+Lotus,Europe,Gasoline,#FFD166,6,24,17
+Maserati,Europe,Gasoline,#FFD166,6,24,16
+Maserati,Europe,Gasoline,#FFD166,8,20,14
+Mazda,Asia,Gasoline,#EF476F,4,34,26
+Mazda,Asia,Gasoline,#EF476F,4,35,27
+McLaren Automotive,Europe,Gasoline,#FFD166,8,23,16
+Mercedes-Benz,Europe,Electricity,#FFD166,0,82,85
+Mercedes-Benz,Europe,Gasoline,#FFD166,4,30,23
+Mercedes-Benz,Europe,Gasoline,#FFD166,6,25,19
+Mercedes-Benz,Europe,Gasoline,#FFD166,8,22,16
+Mercedes-Benz,Europe,Gasoline,#FFD166,12,20,13
+MINI,Europe,Gasoline,#FFD166,4,33,24
+Mitsubishi,Asia,Electricity,#EF476F,0,102,121
+Mitsubishi,Asia,Gasoline,#EF476F,6,27,20
+Mitsubishi,Asia,Gasoline,#EF476F,3,42,35
+Mitsubishi,Asia,Gasoline,#EF476F,4,31,24
+Nissan,Asia,Electricity,#EF476F,0,101,124
+Nissan,Asia,Gasoline,#EF476F,4,31,26
+Nissan,Asia,Gasoline,#EF476F,6,26,18
+Nissan,Asia,Gasoline,#EF476F,4,33,26
+Nissan,Asia,Gasoline,#EF476F,6,25,18
+Nissan,Asia,Gasoline,#EF476F,8,20,14
+Porsche,Europe,Gasoline,#FFD166,4,27,21
+Porsche,Europe,Gasoline,#FFD166,6,26,19
+Porsche,Europe,Gasoline,#FFD166,8,21,14
+Ram,North America,Gasoline,#06D6A0,8,21,14
+Ram,North America,Gasoline,#06D6A0,4,28,21
+Ram,North America,Gasoline,#06D6A0,6,24,17
+Rolls-Royce,Europe,Gasoline,#FFD166,12,19,12
+Roush Performance,North America,Gasoline,#06D6A0,8,23,14
+Smart,Europe,Gasoline,#FFD166,3,39,32
+Subaru,Asia,Gasoline,#EF476F,4,27,21
+Subaru,Asia,Gasoline,#EF476F,4,33,25
+Subaru,Asia,Gasoline,#EF476F,6,28,20
+Tesla,North America,Electricity,#06D6A0,0,98,92
+Toyota,Asia,Gasoline,#EF476F,4,30,23
+Toyota,Asia,Gasoline,#EF476F,4,35,32
+Toyota,Asia,Gasoline,#EF476F,6,25,20
+Toyota,Asia,Gasoline,#EF476F,8,18,13
+Volkswagen,Europe,Gasoline,#FFD166,4,28,21
+Volkswagen,Europe,Gasoline,#FFD166,4,33,24
+Volkswagen,Europe,Gasoline,#FFD166,6,25,18
+Volvo,Europe,Gasoline,#FFD166,4,29,22
+Volvo,Europe,Gasoline,#FFD166,4,32,23
