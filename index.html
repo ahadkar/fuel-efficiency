@@ -918,6 +918,44 @@
 
 					d3.select("#scatter-plot").selectAll("*").remove();
 
+					if ((selected_engine_type == "All" || selected_engine_type == "Electricity")
+						&& selected_cylinder_type == "All" 
+						&& selected_region_type == "All") {
+					   	const annotations = [{
+					          //below in makeAnnotations has type set to d3.annotationLabel
+					          //you can add this type value below to override that default
+					          type: d3.annotationCalloutCircle,
+					          note: {
+					            label: "Electric cars outperform Gasoline and Diesel cars by a huge margin; both in city and on highways.",
+					            title: "Time to go Electric!",
+					            wrap: 190
+					          },
+					          //settings for the subject, in this case the circle radius
+					          subject: {
+					            radius: 80
+					          },
+					          x: 400,
+					          y: 165,
+					          dx: -102,
+					          dy: 137,
+					          ny: 100,
+					        }].map(function(d){ d.color = "#636c77"; return d})
+
+				        const makeAnnotations = d3.annotation()
+										          .type(d3.annotationLabel)
+										          .annotations(annotations)
+
+				         document.fonts.ready.then(function() {
+						      d3.select("#scatter-plot")
+						        .append("g")
+						        .attr("class", "annotation-group")
+						        .style('font-size', 12)
+						        .style('font-family', "Roboto")
+						        .call(makeAnnotations)
+						        .attr("pointer-events", "none");
+						    });
+					   }
+
 					var dl = plot_data.length;
 
 					var minX = Math.min(...avgCity);
@@ -1026,41 +1064,6 @@
 					  .text('Avg Highway')
 					  .style("text-anchor", "start")
 					  .style("fill", "#636c77");
-
-					if (selected_engine_type == "All" && selected_cylinder_type == "All" && selected_region_type == "All") {
-					   	const annotations = [{
-					          //below in makeAnnotations has type set to d3.annotationLabel
-					          //you can add this type value below to override that default
-					          type: d3.annotationCalloutCircle,
-					          note: {
-					            label: "Electric cars outperform Gasoline and Diesel cars by a huge margin; in city and highways.",
-					            title: "Time to go Electric!",
-					            wrap: 190
-					          },
-					          //settings for the subject, in this case the circle radius
-					          subject: {
-					            radius: 80
-					          },
-					          x: 400,
-					          y: 165,
-					          dx: -102,
-					          dy: 137,
-					          ny: 100,
-					        }].map(function(d){ d.color = "#636c77"; return d})
-
-				        const makeAnnotations = d3.annotation()
-										          .type(d3.annotationLabel)
-										          .annotations(annotations)
-
-				         document.fonts.ready.then(function() {
-						      d3.select("#scatter-plot")
-						        .append("g")
-						        .attr("class", "annotation-group")
-						        .style('font-size', 12)
-						        .style('font-family', "Roboto")
-						        .call(makeAnnotations)
-						    });
-					   }
 				}
 
 				function compare(a, b) {
