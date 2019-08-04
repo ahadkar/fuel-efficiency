@@ -5,6 +5,7 @@
 	<title>Fuel Efficiency</title>
 	<head>
 		<script src='https://d3js.org/d3.v5.min.js'></script>
+		<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
@@ -541,6 +542,7 @@
 								count : 1,
 								cityAvg : d.AverageCityMPG,
 								highwayAvg : d.AverageHighwayMPG,
+								fuel : d.Fuel,
 							}
 
 							selected_data.push(car_make);
@@ -674,7 +676,6 @@
 					   .text('Avg MPG')
 					   .style("text-anchor", "end");
 
-
 					svg.selectAll('.bar')
 					   .data(selected_data)
 					   .enter()
@@ -684,6 +685,9 @@
 					   .attr('y', height - (margin * 2))
 					   .attr('fill', function(d, i) { return selected_data[i].color; })
 					   .attr('height', 0)
+					   .attr('id', function(d, i) {
+					   		return d.make;
+					   })
 					   .on('mouseover', function(d, i) {
 					   		d3.select(this).attr("fill", "#26547C");
 					    	tooltip.transition().duration(200).style('opacity', 1.0);
@@ -700,6 +704,88 @@
 					   .ease(d3.easeLinear)
 					   .attr('y', function(d) { return yScale(d.avg); })
 					   .attr('height', function(d) { return height - (margin * 2) - yScale(d.avg); });
+
+					   if (selected_engine_type == "All" && selected_cylinder_type == "All" && selected_region_type == "All") {
+						   	const annotations = [{
+						          note: {
+						            label: "Only car manufacturer which solely builds electric cars.",
+						            title: "Tesla",
+						            wrap: 125,
+						            align: "left"
+						          },
+						          connector: {
+						            end: "arrow" // 'dot' also available
+						          },
+						          x: 925,
+						          y: 120,
+						          dy: 100,
+						          dx: -105,
+						        },
+						        {
+						          note: {
+						            label: "V12 cars, i.e., cars with 12 cylinders are fun to drive, but are not easy on the wallet. They have some of the lowest averages. They are also considered super cars. \nFor e.g. Aston Martin, Ferrari,  and Bentley.",
+						            title: "The Power of V12",
+						            wrap: 150,
+						            align: "left"
+						          },
+						          connector: {
+						            end: "arrow" // 'dot' also available
+						          },
+						          x: 365,
+						          y: 380,
+						          dy: 100,
+						          dx: 105,
+						          nx: 400,
+						          ny: 200,
+						        },
+						        {
+						          note: {
+						            label: "",
+						            title: "",
+						            wrap: 150,
+						            align: "left"
+						          },
+						          connector: {
+						            end: "arrow" // 'dot' also available
+						          },
+						          x: 440,
+						          y: 395,
+						          dy: 100,
+						          dx: 105,
+						          nx: 410,
+						          ny: 200,
+						        },
+						        {
+						          note: {
+						            label: "",
+						            title: "",
+						            wrap: 150,
+						            align: "left"
+						          },
+						          connector: {
+						            end: "arrow" // 'dot' also available
+						          },
+						          x: 405,
+						          y: 385,
+						          dy: 100,
+						          dx: 105,
+						          nx: 405,
+						          ny: 200,
+						        }].map(function(d){ d.color = "#636c77"; return d})
+
+					        const makeAnnotations = d3.annotation()
+											          .type(d3.annotationLabel)
+											          .annotations(annotations)
+
+					         document.fonts.ready.then(function() {
+							      d3.select("#bar-chart")
+							        .append("g")
+							        .attr("class", "annotation-group")
+							        .style('font-size', 12)
+							        .style('font-family', "Roboto")
+							        .call(makeAnnotations)
+							    });
+					   }
 				}
 
 				function plotBubbleGraph(selected_data, makes, counts) {
@@ -895,7 +981,7 @@
 
 				      		d3.select(this).style("stroke", "#ffffff");
 
-				      		tooltip.style("visibility", "hidden");
+				      		return tooltip.style("visibility", "hidden");
 				      })
 					  .transition()
 					  .duration(500)
@@ -940,6 +1026,41 @@
 					  .text('Avg Highway')
 					  .style("text-anchor", "start")
 					  .style("fill", "#636c77");
+
+					if (selected_engine_type == "All" && selected_cylinder_type == "All" && selected_region_type == "All") {
+					   	const annotations = [{
+					          //below in makeAnnotations has type set to d3.annotationLabel
+					          //you can add this type value below to override that default
+					          type: d3.annotationCalloutCircle,
+					          note: {
+					            label: "Electric cars outperform Gasoline and Diesel cars by a huge margin; in city and highways.",
+					            title: "Time to go Electric!",
+					            wrap: 190
+					          },
+					          //settings for the subject, in this case the circle radius
+					          subject: {
+					            radius: 80
+					          },
+					          x: 400,
+					          y: 165,
+					          dx: -102,
+					          dy: 137,
+					          ny: 100,
+					        }].map(function(d){ d.color = "#636c77"; return d})
+
+				        const makeAnnotations = d3.annotation()
+										          .type(d3.annotationLabel)
+										          .annotations(annotations)
+
+				         document.fonts.ready.then(function() {
+						      d3.select("#scatter-plot")
+						        .append("g")
+						        .attr("class", "annotation-group")
+						        .style('font-size', 12)
+						        .style('font-family', "Roboto")
+						        .call(makeAnnotations)
+						    });
+					   }
 				}
 
 				function compare(a, b) {
@@ -956,6 +1077,34 @@
 					}
 					
 					return comparison;
+				}
+
+				function simulateMouseover() {
+				  var event = new MouseEvent('mouseover', {
+				    'view': window,
+				    'bubbles': true,
+				    'cancelable': true
+				  });
+				  var myTarget = document.getElementById('Tesla'); 
+				  var canceled = !myTarget.dispatchEvent(event);
+				  if (canceled) {
+				    // A handler called preventDefault.
+				    // alert("canceled");
+				  } else {
+				    // None of the handlers called preventDefault.
+				    // alert("not canceled");
+				  }
+				}
+
+				function mouseOverBehaviour() {
+				    myElement = document.getElementById("Tesla");
+				     // attach mouseover event listener to element
+				    myElement.addEventListener("mouseover", function(event) {
+				        // change the color of the font
+				        // event.target.style.color = "red";
+				    });  
+				    // call the simulation
+				    setTimeout(simulateMouseover, 2000);
 				}
 			}
 
